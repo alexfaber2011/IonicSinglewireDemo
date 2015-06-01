@@ -1,3 +1,11 @@
 node_modules/
 .idea/
 www/js/all.js
+platforms/ios/cordova/console.log
+platforms/ios/build
+platforms/ios/www
+platforms/android/CordovaLib/ant-build
+platforms/android/CordovaLib/ant-gen
+platforms/android/ant-build
+platforms/android/ant-gen
+platforms/android/assets/www
