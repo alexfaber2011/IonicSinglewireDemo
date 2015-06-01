@@ -11,4 +11,9 @@ platforms/android/ant-gen
 platforms/android/assets/www
 platforms/blackberry10/build/
 platforms/blackberry10/www/
+platforms/amazon-fireos/CordovaLib/ant-build
+platforms/amazon-fireos/CordovaLib/ant-gen
+platforms/amazon-fireos/ant-build
+platforms/amazon-fireos/ant-gen
+platforms/amazon-fireos/assets/www
 !platforms/blackberry10/www/config.xml
