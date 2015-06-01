@@ -10,13 +10,22 @@ mainControllers.controller('MessagesCtrl', function($scope, $stateParams, $resou
         }
     });
 
-    //Fires each time the view is revealed (Ionic Changed this recently due to their new caching system)
-    $scope.$on('$ionicView.enter', function(e) {
+    $scope.fetchMessages = function(){
+
         messages.get().$promise.then(function (fetchedMessages) {
             console.log('[MessagesCtrl] fetchedMessages: ' + JSON.stringify(fetchedMessages));
             $scope.messages = fetchedMessages.data;
+            $scope.$broadcast('scroll.refreshComplete');
         }).catch(function (error) {
             console.error(error);
+            $scope.$broadcast('scroll.refreshComplete');
         });
+    };
+
+    //Fires each time the view is revealed (Ionic Changed this recently due to their new caching system)
+    $scope.$on('$ionicView.enter', function(e) {
+        $scope.fetchMessages();
     });
+
+
 });

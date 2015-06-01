@@ -3,7 +3,7 @@
  */
 mainControllers.factory('apiHelper', function(){
     var instanceData = {
-        BASE_URL: 'https://alex.qadev.singlewire.com:8444/InformaCast/RESTServices/V1/'
+        BASE_URL: 'https://172.30.228.48:8444/InformaCast/RESTServices/V1/'
     };
     
     return {
