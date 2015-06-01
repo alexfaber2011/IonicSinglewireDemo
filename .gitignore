@@ -9,3 +9,6 @@ platforms/android/CordovaLib/ant-gen
 platforms/android/ant-build
 platforms/android/ant-gen
 platforms/android/assets/www
+platforms/blackberry10/build/
+platforms/blackberry10/www/
+!platforms/blackberry10/www/config.xml
