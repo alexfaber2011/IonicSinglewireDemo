@@ -3,7 +3,6 @@
  */
 mainControllers.factory('apiHelper', function(){
     var instanceData = {
-        basicEncoded: null,
         BASE_URL: 'https://alex.qadev.singlewire.com:8444/InformaCast/RESTServices/V1/'
     };
     
@@ -12,11 +11,11 @@ mainControllers.factory('apiHelper', function(){
             return instanceData.BASE_URL;
         },
         getBasicEncoded: function(){
-            return instanceData.basicEncoded;
+            return localStorage.getItem("authorization");
         },
         setBasicEncoded: function(basicEncoded){
-            console.log('[apiHelper] setBasicEncoded: ' + basicEncoded);
-            instanceData.basicEcoded = basicEncoded;
+            //console.log('[apiHelper] setBasicEncoded: ' + basicEncoded);
+            localStorage.setItem("authorization", basicEncoded);
         }
     }
 });

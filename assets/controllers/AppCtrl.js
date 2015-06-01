@@ -1,7 +1,7 @@
 /**
  * Created by alexfaber on 6/1/15.
  */
-mainControllers.controller('AppCtrl', function($scope, $ionicModal, $timeout) {
+mainControllers.controller('AppCtrl', function($scope, $ionicModal, $timeout, apiHelper) {
 
     // With the new view caching in Ionic, Controllers are only called
     // when they are recreated or on app start, instead of every page change.
@@ -31,13 +31,19 @@ mainControllers.controller('AppCtrl', function($scope, $ionicModal, $timeout) {
     };
 
     // Perform the login action when the user submits the login form
+    //loginData = { username: "username", password: "password" }
     $scope.doLogin = function() {
         console.log('Doing login', $scope.loginData);
 
-        // Simulate a login delay. Remove this and replace with your login
-        // code if using a login system
-        $timeout(function() {
+        //Check to see if user has supplied both username and password, if so, remember them
+        var username = $scope.loginData.username;
+        var password = $scope.loginData.password;
+        if(username && password){
+            var basicEncoded = "Basic " + btoa(username + ":" + password);
+            apiHelper.setBasicEncoded(basicEncoded);
             $scope.closeLogin();
-        }, 1000);
+        }else{
+            alert("Please Provide Both a Username and a Password");
+        }
     };
 });

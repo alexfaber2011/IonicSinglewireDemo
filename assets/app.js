@@ -66,6 +66,16 @@ angular.module('starter', ['ionic', 'ngResource', 'starter.controllers'])
         controller: 'PlaylistCtrl'
       }
     }
+  })
+
+  .state('app.messages', {
+    url: "/messages",
+    views: {
+      'menuContent': {
+        templateUrl: "templates/messages.html",
+        controller: "MessagesCtrl"
+      }
+    }
   });
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/app/playlists');
