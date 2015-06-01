@@ -17,3 +17,9 @@ platforms/amazon-fireos/ant-build
 platforms/amazon-fireos/ant-gen
 platforms/amazon-fireos/assets/www
 !platforms/blackberry10/www/config.xml
+www/lib
+!www/lib/ionic
+!www/lib/angular
+!www/lib/angular-sanitize
+!www/lib/angular-ui-router
+!www/lib/angular-animate
